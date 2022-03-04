@@ -1,9 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import ScreenshotButton from './ScreenshotButton';
+import { useRef } from 'react';
+
 
 function App() {
+  const ref = useRef(null)
   return (
-    <div className="App">
+    <div className="App" ref={ref}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <ScreenshotButton target={ref} />
       </header>
     </div>
   );

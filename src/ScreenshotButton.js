@@ -4,7 +4,7 @@ import axios from "axios";
 
 const ScreenshotButton = (props) => {
   const onButtonClick = useCallback(() => {
-    if (props.target.current === null) {
+    if (!props.target || !props.target.current) {
       return;
     }
     toBlob(props.target.current, { cacheBust: true })
